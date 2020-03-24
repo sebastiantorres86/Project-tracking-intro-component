@@ -1,39 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Project tracking intro component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Product
-  Features
-  Pricing
-  Login
+    <title>Frontend Mentor | Project tracking intro component</title>
 
-  New
-  Monograph Dashboard
+    <link rel="stylesheet" href="main.css" />
 
-  Powerful insights into your team
-  Project planning and time tracking for agile teams
+    <link
+      href="https://fonts.googleapis.com/css?family=Barlow|Barlow+Condensed:400,700&display=swap"
+      rel="stylesheet"
+    />
 
-  Schedule a demo
-  to see a live preview
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <header>
+      <figure>
+        <img src="/images/logo.svg" alt="" />
+      </figure>
+      <nav class="navbar topnav" id="myTopnav">
+        <a href="#Product">Product</a>
+        <a href="#Features">Features</a>
+        <a href="#Pricing">Pricing</a>
+        <span class="dot"></span>
+        <a href="#Login" class="active">Login</a>
+
+        <!-- Trigger/Open The Modal -->
+        <img id="myBtn" src="/images/icon-hamburger.svg" alt="" />
+        <img class="close" src="/images/icon-close.svg" alt="">
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <a href="#Product">Product</a>
+            <a href="#Features">Features</a>
+            <a href="#Pricing">Pricing</a>
+            <hr>
+            <a href="#Login" class="active">Login</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="flex-rows">
+        <article class="flex-column-text">
+          <p class="uppercase wide">
+            <span class="rounded">New</span> Monograph Dashboard
+          </p>
+          <h1>Powerful insights into your team</h1>
+          <p class="copy">Project planning and time tracking for agile teams</p>
+          <div class="call-to-action">
+            <button class="uppercase">Schedule a demo</button>
+            <p class="uppercase wide">to see a preview</p>
+          </div>
+        </article>
+
+        <aside class="flex-column-image">
+          <figure class="devices">
+            <img src="/images/illustration-devices.svg" alt="" />
+          </figure>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Sebastian Torres</a>.
+      </p>
+    </footer>
+
+    <script>
+      // Get the modal
+      const modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      const btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      const span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+        btn.style.display = "none";
+        span.style.display = "inline-block";
+      };
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+        span.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+          span.style.display = "none";
+          btn.style.display = "inline-block";
+        }
+      };
+    </script>
+  </body>
 </html>
